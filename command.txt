@@ -1,0 +1,193 @@
+1. Create two folders project1 and project2 locally. Create a repository in github or bitbucket, name it test_project.
+
+2. Switch to project1
+$ git init
+$ git add README.txt
+$ git commit -m 'first commit'
+
+3. Switch to a new branch - 'staging'.
+$ git checkout -b 'staging'
+
+4. Add a file in it - 'test1' and add content to it 'This is first commit'.
+$ touch test1.txt
+$ git add test1.txt
+$ git commit -m 'test1 first commit'
+
+5. Push it to github.
+$ git remote add origin git@github.com:lokeshvinsol/test_project.git
+$ git push -u origin master
+$ git push -u origin staging
+
+6. Move to folder project2.
+$ cd ..
+$ cd project2
+
+7. Clone the repo in project2.
+$ git clone git@github.com:lokeshvinsol/test_project.git
+$ cd test_project
+
+8. Switch to staging.
+$  git checkout staging
+
+9. Change the text in file 'test1' to 'This is second commit'.
+
+10. Commit and push to remote branch.
+$ git add test1
+$ git commit -m 'project2 this is second commit'
+$ git push
+
+11. Move to project1.
+
+12. Switch to staging branch.
+$ git checkout staging
+
+13. Change the text in file 'test1' to 'This is third commit'.
+
+14. Commit and push to remote branch. (Explain what happened here).
+$ git add test1
+$ git commit -m 'project1 this is third commit'
+$ git push
+![rejected] 
+Asking to pull first then use push command
+$ git pull
+got conflicts.
+After conflicts removal
+$ git add test1
+$ git commit -m 'project1 this is third commit conflict resolve after pull'
+$ git push
+
+
+15. Switch to master.
+$ git chekout master
+
+16. Merge staging branch into master.
+$ git merge staging
+
+17. Create a new branch testing.
+$ git checkout -b testing
+
+18. Change the text to 'A is an alphabet' and commit.
+$ git add test1
+$ git commit -m 'project1 test1 A is an Alphabet'
+
+19. Repeat the 'step 18' seven times and each time update the alphabet 'A' to 'B' to 'C' etc.(Don't forget to commit the change everytime)
+$ git add test1
+$ git commit -m 'project1 test1 B is a Alphabet'
+
+$ git add test1
+$ git commit -m 'project1 test1 C is an Alphabet'
+
+$ git add test1
+$ git commit -m 'project1 test1 D is an Alphabet'
+
+$ git add test1
+$ git commit -m 'project1 test1 E is an Alphabet'
+
+$ git add test1
+$ git commit -m 'project1 test1 F is an Alphabet'
+
+$ git add test1
+$ git commit -m 'project1 test1 G is an Alphabet'
+
+$ git add test1
+$ git commit -m 'project1 test1 H is an Alphabet'
+
+20. Push the branch to github.
+$ git push -u origin testing
+
+21. Checkout to master.
+$ git checkout master
+
+22. Change the text '1 is a number' and commit.
+$ git add test1
+$ git commit -m 'project1 test1 1 is a number'
+
+23. Repeat the 'step 22' seven times and each time update the number '1' to '2' to '3' etc.(Don't forget to commit the change everytime)
+$ git add test1
+$ git commit -m 'project1 test1 2 is a number'
+
+$ git add test1
+$ git commit -m 'project1 test1 3 is a number'
+
+$ git add test1
+$ git commit -m 'project1 test1 4 is a number'
+
+$ git add test1
+$ git commit -m 'project1 test1 5 is a number'
+
+$ git add test1
+$ git commit -m 'project1 test1 6 is a number'
+
+$ git add test1
+$ git commit -m 'project1 test1 7 is a number'
+
+$ git add test1
+$ git commit -m 'project1 test1 8 is a number'
+
+24. Push master branch to github.
+$ git push -u origin master
+
+25. Now, rebase testing into master(and don't push the new master and testing branch).
+$ git rebase testing
+CONFLICT
+$ git add test1
+$ git rebase --continue
+CONFLICT
+$ git add test1
+$ git rebase --continue
+CONFLICT
+$ git add test1
+$ git rebase --continue
+CONFLICT
+$ git add test1
+$ git rebase --continue
+CONFLICT
+$ git add test1
+$ git rebase --continue
+CONFLICT
+$ git add test1
+$ git rebase --continue
+CONFLICT
+$ git add test1
+$ git rebase --continue
+
+26. Move to project2.
+
+27. Track testing branch.
+$ git pull
+
+28. Checkout to master.
+$ git checkout master
+
+29. Merge branch testing into master.
+$ git merge testing
+CONFLICT
+$ git add test1
+$ git commit - 'Merge branch testing'
+
+30. Share your views about the difference between master and testing.
+
+In Project2 cloned test_project 
+
+Master branch test1 file content is :
+8 is a number
+'H' is an Alphabet
+
+Testing branch test1 file content is :
+'H' is an Alphabet
+
+In Project1 
+Master branch test1 file content is :
+'H' is an Alphabet
+1 is a number
+2 is a number
+3 is a number
+4 is a number
+5 is a number
+6 is a number
+7 is a number
+8 is a number
+
+Testing branch test1 file content is :
+'H' is an Alphabet
+
